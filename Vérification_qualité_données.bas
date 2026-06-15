@@ -1,18 +1,18 @@
 Attribute VB_Name = "Module1"
 Sub Verification_Qualifications_2()
     '
-    '   Fonction qui permet de vÈrifier si les :
+    '   Fonction qui permet de v√©rifier si les :
     '       - services; -qualifications; -sites; -agence;
-    ' prÈsents dans une table de donnÈe, contenant les informations de vacations des
-    ' agents (ex : CDI_CDD), sont bien rÈfÈrencÈs.
+    ' pr√©sents dans une table de donn√©e, contenant les informations de vacations des
+    ' agents (ex : CDI_CDD), sont bien r√©f√©renc√©s.
     '   Pour le bon fonctionnement de cette macro :
-    '       - renommer les TCD tels que : TCD_services/sites/qualifs/agence
-    '       - renommer les tableaux de ref : Ref_services/sites/qualifs/agence
+    '       - Renommer les TCD tels que : TCD_services/sites/qualifs/agence
+    '       - Renommer les tableaux de ref : Ref_services/sites/qualifs/agence
     '       - Ajouter aux TDC une colonne somme de valeur (colonne des noms pour compter les vides)
-    '       - SÈparer les TCD d'au moins 2 cases
+    '       - S√©parer les TCD d'au moins 2 cases
     '       - Remplir les tableaux de ref
-    ' LÈonor Martin-Nourry
-    ' last update : (15/06/26)(ajout vÈrification agence(intÈrimaires))
+    ' L√©onor Martin-Nourry (bas√© sur un code pr√©c√©demment √©crit par un coll√®gue non optimis√©)
+    ' last update : (15/06/26)(ajout v√©rification agence(int√©rimaires))
     
     Dim wb As Workbook
     Dim wsRef As Worksheet
@@ -22,10 +22,10 @@ Sub Verification_Qualifications_2()
     
     Set wb = ActiveWorkbook
     Set wsRef = wb.Sheets("REF")
-    Set wsPre = wb.Sheets("QualitÈ")
+    Set wsPre = wb.Sheets("Qualit√©")
 
     ' ==========================
-    ' DÈfinition des Tableaux de rÈfÈrence
+    ' D√©finition des Tableaux de r√©f√©rence
     ' ==========================
     'Source
     Set tab_services = wsRef.ListObjects("Ref_services")
@@ -88,7 +88,7 @@ Sub Verification_Qualifications_2()
         Next i
     
     ' ==========================
-    ' V…RIFICATION DANS LA FEUILLE "QualitÈ"
+    ' V√âRIFICATION DANS LA FEUILLE "Qualit√©"
     ' ==========================
     
     ' SERVICE
@@ -166,7 +166,7 @@ Sub Verification_Qualifications_2()
 
     End With
 
-    MsgBox "VÈrification complËte terminÈe", vbInformation
+    MsgBox "V√©rification compl√®te termin√©e", vbInformation
 
 End Sub
 
